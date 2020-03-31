@@ -1,9 +1,20 @@
 
 (function (exports) {
+    function TestNotelistViewNone() {
+        var noteList = new NoteList()
+        var noteListView = new NoteListView(noteList)
+        if (noteListView.displayNotes() === 'There are no notes to display') {
+            console.log('Test for displaying when no note, passed')
+        }
+        else {
+            console.log('Test for displaying when no note, failed')
+        }
+
+    }
 
 
 
-    function TestNotelistView() {
+    function TestNotelistViewSingle() {
         var noteList = new NoteList()
         noteList.addNote('testing note')
         var noteListView = new NoteListView(noteList)
@@ -31,7 +42,8 @@
         }
 
     }
-    TestNotelistView()
+    TestNotelistViewNone()
+    TestNotelistViewSingle()
     TestNotelistViewforMultiple()
 
 })(this)
