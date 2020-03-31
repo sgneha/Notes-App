@@ -1,0 +1,22 @@
+{
+  "name": "notes-app",
+  "version": "1.0.0",
+  "description": "single page app in pure Javascript  ## User-Stories",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sgneha/Notes-App.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sgneha/Notes-App/issues"
+  },
+  "homepage": "https://github.com/sgneha/Notes-App#readme",
+  "dependencies": {
+    "http-server": "^0.12.1"
+  }
+}
