@@ -20,12 +20,12 @@
     }
     Test.prototype.toBe = function (things) {
         let value = this.value.__proto__.constructor.name
-        let things = this.value.__proto__.constructor.name
-        if (value === things) {
+        let thing = this.value.__proto__.constructor.name
+        if (value === thing) {
             console.log('PASSED')
         }
         else {
-            console.log(`FAILED: Expected ${value} to be a  ${things}`)
+            console.log(`FAILED: Expected ${value} to be a  ${thing}`)
         }
     }
     var expect = function (value) {
