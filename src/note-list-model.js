@@ -6,7 +6,9 @@
         return this.list
     }
     NoteList.prototype.addNote = function (note) {
-        this.list.push(new Note(note))
+        var newNote = new Note(note)
+        newNote.id = this.list.length
+        this.list.push(newNote)
     }
 
     exports.NoteList = NoteList

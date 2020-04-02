@@ -1,3 +1,5 @@
+
+
 (function (exports) {
 
     function testForViewAllNotes() {
@@ -24,6 +26,18 @@
         }
 
     }
+    function testAddId() {
+        console.log("Test to add unique Id")
+        var noteList = new NoteList()
+        noteList.addNote('My first Note')
+        expect(noteList.list[0].id).toEqual(0)
+        noteList.addNote('My second Note')
+        expect(noteList.list[1].id).toEqual(1)
+
+
+    }
+
     testForaddNote()
     testForViewAllNotes()
+    testAddId()
 })(this)
