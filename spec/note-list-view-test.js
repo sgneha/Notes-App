@@ -42,8 +42,25 @@
         }
 
     }
+    function testDisplayFirst20() {
+        var noteList = new NoteList()
+        noteList.addNote('testing note so that i can check if its more than 20')
+        var noteListView = new NoteListView(noteList)
+        if (noteListView.displayNotes() === ('<ul><li><div>testing note so that</div></li></ul>')) {
+
+            console.log('%c Test for displaying 20 characters passed', 'color: green')
+
+        }
+        else {
+
+            console.log('%c Test for displaying  20 characters failed', 'color: red')
+        }
+
+    }
+
     TestNotelistViewNone()
     TestNotelistViewSingle()
     TestNotelistViewforMultiple()
+    testDisplayFirst20()
 
 })(this)
