@@ -14,6 +14,7 @@
 
         return `<ul>${result.join('')}</ul>`
 
+
     }
     exports.NoteListView = NoteListView
 })(this)
