@@ -18,11 +18,13 @@
         var noteList = new NoteList()
         noteList.addNote('testing note')
         var noteListView = new NoteListView(noteList)
-        if (noteListView.displayNotes() === ('<ul><li><div>testing note</div></li></ul>')) {
+        var input = '<ul><li><a href="#notes/0" id=0>testing note</a></li></ul>'
+        if (noteListView.displayNotes() === input) {
             console.log('Test for displaying single note passed')
 
         }
         else {
+
             console.log('Test for displaying single note failed')
         }
 
@@ -32,8 +34,7 @@
         noteList.addNote('testing note 1')
         noteList.addNote('testing note 2')
         var noteListView = new NoteListView(noteList)
-
-        if (noteListView.displayNotes() === ('<ul><li><div>testing note 1</div></li><li><div>testing note 2</div></li></ul>')) {
+        if (noteListView.displayNotes() === ('<ul><li><a href="#notes/0" id=0>testing note 1</a></li><li><a href="#notes/1" id=1>testing note 2</a></li></ul>')) {
             console.log('Test for displaying  multiple notes passed')
 
         }
@@ -46,7 +47,7 @@
         var noteList = new NoteList()
         noteList.addNote('testing note so that i can check if its more than 20')
         var noteListView = new NoteListView(noteList)
-        if (noteListView.displayNotes() === ('<ul><li><div>testing note so that</div></li></ul>')) {
+        if (noteListView.displayNotes() === ('<ul><li><a href="#notes/0" id=0>testing note so that</a></li></ul>')) {
 
             console.log('%c Test for displaying 20 characters passed', 'color: green')
 

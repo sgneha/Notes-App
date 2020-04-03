@@ -4,16 +4,60 @@
     <title>Note App</title>
     <link rel="stylesheet" href="">
 
-</head>
-
-<body>
-    <div id="app">hello</div>
     <script src='src/note-model.js'></script>
     <script src='src/note-list-model.js'></script>
     <script src='views/note-list-view.js'></script>
     <script src='views/single-note-view.js'></script>
     <script src='src/note-controller.js'></script>
+</head>
+
+<body>
+    <form id="text">
+        <input type="textarea" name="note" placeholder="Write a note">
+        <input type="submit" value="Submit">
+    </form>
+    <div id="notes"></div>
 </body>
+
+<script>
+    var c = new Controller()
+    document.getElementById("text").addEventListener("submit", () => {
+        c.addNote(submitEvent(event))
+        c.displayNotes()
+    })
+
+    function submitEvent(event) {
+        event.preventDefault()
+        noteText = event.srcElement.elements["note"].value
+        return noteText
+    }
+
+    window.onhashchange = function () {
+        var noteID = location.hash.split("#notes/")[1]
+        var fullNote = c.fullNote(noteID);
+        document
+            .getElementById(noteID)
+            .innerHTML = fullNote;
+    }
+
+    // document
+    //     .getElementById("notes")
+    //     .addEventListener("click", function (clickEvent) {
+    //         clickEvent.preventDefault();
+    //         var target = clickEvent.target || clickEvent.srcElement
+    //         sayNote(target.id);
+    //     });
+
+
+    // function sayNote(id) {
+
+    //     var fullNote = c.fullNote(id);
+
+    //     document
+    //         .getElementById(id)
+    //         .innerHTML = fullNote;
+    // };
+</script>
 
 
 </html>

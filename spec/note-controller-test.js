@@ -12,7 +12,7 @@
     }
     function mockElement() {
         var mockedElement = document.createElement('div')
-        mockedElement.id = 'app'
+        mockedElement.id = 'notes'
         document.getElementsByTagName('body').item(0).appendChild(mockedElement)
     }
 
@@ -21,7 +21,7 @@
         mockElement()
         noteController.addNote("Hi")
         noteController.displayNotes()
-        expect(document.getElementById("app").innerHTML).toInclude("Hi")
+        expect(document.getElementById("notes").innerHTML).toInclude("Hi")
     }
 
     controllerInstantiated()
